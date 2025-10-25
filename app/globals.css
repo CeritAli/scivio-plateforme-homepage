@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styles globaux pour SCIVIO */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply antialiased;
+}
+
+/* Pour faciliter la personnalisation du template */
+:root {
+  --primary: #107bb3;
+  --primary-dark: #005492;
+  --primary-light: #3d9bcf;
+}
+
