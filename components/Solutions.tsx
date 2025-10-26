@@ -133,16 +133,19 @@ export default function Solutions() {
         className="mt-20"
       >
         <div className="flex flex-col items-center justify-center">
-          <p className="text-black text-lg mb-3 font-medium text-center">Propulsé par :</p>
-          <div className="flex items-center justify-center gap-6">
+          <p className="text-black text-lg mb-8 font-medium text-center">Propulsé par</p>
+          <div className="flex items-center justify-center gap-8">
               {/* Ragflow */}
               <a 
                 href="https://ragflow.io" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center justify-center transition-opacity hover:opacity-70"
+                className="flex flex-col items-center gap-3 transition-opacity hover:opacity-70"
               >
-                <RagflowLogo />
+                <div className="h-12 flex items-center justify-center">
+                  <RagflowLogo />
+                </div>
+                <span className="text-black font-medium">Ragflow</span>
               </a>
 
               {/* Chutes.ai */}
@@ -150,9 +153,12 @@ export default function Solutions() {
                 href="https://chutes.ai" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center justify-center transition-opacity hover:opacity-70"
+                className="flex flex-col items-center gap-3 transition-opacity hover:opacity-70"
               >
-                <ChutesLogo />
+                <div className="h-12 flex items-center justify-center">
+                  <ChutesLogo />
+                </div>
+                <span className="text-black font-medium">Chutes.ai</span>
               </a>
           </div>
         </div>

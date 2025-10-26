@@ -178,7 +178,7 @@ export default function MissionVision() {
             <div className="bg-gray-50 border-l-4 border-primary p-6 rounded-r-lg -mx-0">
               <p className="text-lg text-gray-800 italic leading-relaxed mb-4">
                 « Nous révolutionnons l&apos;expérience d&apos;apprentissage traditionnel pour offrir 
-                aux étudiants et professionnels de santé la liberté de réussir. Nous souhaitons leur apporter un support optimal pour qu'ils puissent conférer de meilleurs soins »
+                aux étudiants et professionnels de santé la liberté de réussir. Nous souhaitons leur apporter un support optimal pour qu&apos;ils puissent conférer de meilleurs soins »
               </p>
               <p className="text-gray-900 font-semibold">
                 CERIT Aliihsan et KHAMSENG Jimmy - Co-fondateurs de Scivio
