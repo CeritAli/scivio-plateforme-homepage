@@ -131,7 +131,7 @@ export default function Platforms() {
           </div>
 
           {/* Grille de cartes suivant la courbe */}
-          <div className="relative grid grid-cols-3 gap-8 pt-40">
+          <div className="relative grid grid-cols-3 gap-8 pt-20">
             {platforms.map((platform, index) => {
               const Icon = platform.icon
               const isBottom = platform.position === 'bottom'

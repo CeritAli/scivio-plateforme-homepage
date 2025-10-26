@@ -112,18 +112,19 @@ export default function Solutions() {
             })}
           </div>
         </motion.div>
+      </div>
 
-        {/* Propulsé par */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-20"
-        >
-          <div className="flex flex-col items-center justify-center">
-            <p className="text-black text-lg mb-8 font-medium">Propulsé par</p>
-            <div className="flex items-center justify-center gap-8">
+      {/* Propulsé par - Sortie du conteneur max-w-7xl pour être vraiment centré */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="mt-20"
+      >
+        <div className="flex flex-col items-center justify-center">
+          <p className="text-black text-lg mb-8 font-medium text-center">Propulsé par</p>
+          <div className="flex items-center justify-center gap-8">
               {/* Ragflow */}
               <a 
                 href="https://ragflow.io" 
@@ -149,10 +150,9 @@ export default function Solutions() {
                 </div>
                 <span className="text-black font-medium">Chutes.ai</span>
               </a>
-            </div>
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </section>
   )
 }
