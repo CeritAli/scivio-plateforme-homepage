@@ -53,7 +53,7 @@ export default function Navbar() {
       left: elementRect.left - navRect.left,
       width: elementRect.width,
     })
-  }, [])
+  }, [navRefs])
 
   // Détection de la direction du scroll
   useEffect(() => {

@@ -120,7 +120,7 @@ export default function MissionVision() {
             </div>
             <h4 className="text-lg font-semibold text-gray-900 mb-2">Engagement</h4>
             <p className="text-gray-600">
-              Nous sommes à l'écoute de nos utilisateurs et intégrons des systèmes de feedback pour améliorer continuellement nos plateformes
+              Nous sommes à l&apos;écoute de nos utilisateurs et intégrons des systèmes de feedback pour améliorer continuellement nos plateformes
             </p>
           </motion.div>
 

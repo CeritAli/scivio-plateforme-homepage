@@ -88,6 +88,7 @@ export default function Team() {
                 {/* Photo du membre */}
                 <div className="relative h-64 bg-secondary-light overflow-hidden">
                   {member.image ? (
+                    // eslint-disable-next-line @next/next/no-img-element
                     <img
                       src={member.image}
                       alt={member.name}
