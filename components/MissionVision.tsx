@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Target, Eye, Heart, Award } from 'lucide-react'
+import { CheckCircle, Heart, Lightbulb, Shield, Target, Eye } from 'lucide-react'
 
 export default function MissionVision() {
   const ref = useRef(null)
@@ -39,58 +39,63 @@ export default function MissionVision() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            À propos de <span className="text-primary">SCIVIO</span>
+            À <span className="text-primary">propos</span>
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Nous sommes une entreprise innovante spécialisée dans l&apos;éducation médicale,
-            dédiée à transformer l&apos;apprentissage et la pratique médicale grâce à des solutions numériques de pointe
-          </p>
         </motion.div>
 
-        {/* Grille Mission/Vision */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          className="grid md:grid-cols-2 gap-8 mb-16"
-        >
-          {/* Mission */}
+        {/* Section Mission/Vision en croix */}
+        <div className="mb-16 space-y-12">
+          {/* Ligne 1 : Notre Mission */}
           <motion.div
-            variants={itemVariants}
-            className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 border border-primary/20"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="grid md:grid-cols-2 gap-8 items-center"
           >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="bg-primary text-white p-3 rounded-lg">
-                <Target className="w-8 h-8" />
+            <div className="relative bg-blue-50 p-8 rounded-xl overflow-hidden">
+              {/* Icône en arrière-plan */}
+              <div className="absolute -right-4 -top-4 opacity-10 blur-sm">
+                <Target className="w-32 h-32 text-primary transform rotate-12" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">Notre Mission</h3>
+              
+              {/* Titre */}
+              <h3 className="text-3xl font-bold text-gray-900 relative z-10">Notre Mission</h3>
             </div>
-            <p className="text-gray-700 text-lg leading-relaxed">
-              Accompagner les étudiants en médecine et les professionnels de santé dans leur réussite
-              en proposant des outils pédagogiques innovants, efficaces et adaptés aux défis
-              de l&apos;éducation médicale moderne.
-            </p>
+            <div>
+              <p className="text-gray-700 text-lg leading-relaxed">
+                Nous intégrons intelligemment l&apos;intelligence artificielle et les modèles de langage 
+                dans nos plateformes pour améliorer l&apos;expérience des étudiants en médecine et des 
+                professionnels de santé dans l&apos;apprentissage et la formation continue des médecins.
+              </p>
+            </div>
           </motion.div>
 
-          {/* Vision */}
+          {/* Ligne 2 : Notre Vision (inversé) */}
           <motion.div
-            variants={itemVariants}
-            className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-8 border border-primary/20"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="grid md:grid-cols-2 gap-8 items-center"
           >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="bg-primary text-white p-3 rounded-lg">
-                <Eye className="w-8 h-8" />
+            <div className="md:order-2 relative bg-blue-50 p-8 rounded-xl overflow-hidden">
+              {/* Icône en arrière-plan */}
+              <div className="absolute -left-4 -bottom-4 opacity-10 blur-sm">
+                <Eye className="w-32 h-32 text-primary transform -rotate-12" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">Notre Vision</h3>
+              
+              {/* Titre */}
+              <h3 className="text-3xl font-bold text-gray-900 relative z-10">Notre Vision</h3>
             </div>
-            <p className="text-gray-700 text-lg leading-relaxed">
-              Devenir le leader européen de l&apos;éducation médicale numérique en créant
-              un écosystème complet qui couvre l&apos;ensemble du parcours, de la formation initiale
-              à la pratique professionnelle.
-            </p>
+            <div className="md:order-1">
+              <p className="text-gray-700 text-lg leading-relaxed">
+                Devenir le leader européen de l&apos;éducation médicale numérique en créant
+                un écosystème complet qui couvre l&apos;ensemble du parcours, de la formation initiale
+                à la pratique professionnelle.
+              </p>
+            </div>
           </motion.div>
-        </motion.div>
+        </div>
 
         {/* Valeurs */}
         <motion.div
@@ -101,11 +106,11 @@ export default function MissionVision() {
         >
           <motion.div variants={itemVariants} className="text-center p-6">
             <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Award className="w-8 h-8 text-primary" />
+              <CheckCircle className="w-8 h-8 text-primary" />
             </div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">Excellence</h4>
+            <h4 className="text-lg font-semibold text-gray-900 mb-2">Qualité</h4>
             <p className="text-gray-600">
-              Des contenus de qualité validés par des experts
+              Nos plateformes sont soigneusement conçues pour répondre aux besoins de nos utilisateurs
             </p>
           </motion.div>
 
@@ -115,31 +120,27 @@ export default function MissionVision() {
             </div>
             <h4 className="text-lg font-semibold text-gray-900 mb-2">Engagement</h4>
             <p className="text-gray-600">
-              Au service de la réussite de nos utilisateurs
+              Nous sommes à l'écoute de nos utilisateurs et intégrons des systèmes de feedback pour améliorer continuellement nos plateformes
             </p>
           </motion.div>
 
           <motion.div variants={itemVariants} className="text-center p-6">
             <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
+              <Lightbulb className="w-8 h-8 text-primary" />
             </div>
             <h4 className="text-lg font-semibold text-gray-900 mb-2">Innovation</h4>
             <p className="text-gray-600">
-              Technologies de pointe pour un apprentissage optimal
+              Nous sommes constamment à la recherche de nouvelles fonctionnalités et améliorations pour nos plateformes
             </p>
           </motion.div>
 
           <motion.div variants={itemVariants} className="text-center p-6">
             <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-              </svg>
+              <Shield className="w-8 h-8 text-primary" />
             </div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">Collaboration</h4>
+            <h4 className="text-lg font-semibold text-gray-900 mb-2">Rigueur Médicale</h4>
             <p className="text-gray-600">
-              Une communauté d&apos;apprentissage dynamique
+              Nos plateformes sont conçues par des médecins et sont pensées pour répondre aux exigences médicales
             </p>
           </motion.div>
         </motion.div>
