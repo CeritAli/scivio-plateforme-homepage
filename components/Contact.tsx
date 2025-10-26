@@ -42,7 +42,12 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Contactez-<span className="text-primary">nous</span>
+            Contactez-<span style={{
+              background: 'linear-gradient(to right, #005492, #107bb3, #3d9bcf)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>nous</span>
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -173,7 +178,10 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-4 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center gap-2 group"
+                className="w-full text-white font-semibold py-4 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center gap-2 group"
+                style={{
+                  background: 'linear-gradient(to right, #005492, #107bb3, #3d9bcf)'
+                }}
               >
                 Envoyer le message
                 <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

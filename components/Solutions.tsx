@@ -18,7 +18,12 @@ export default function Solutions() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Nos <span className="text-primary">solutions</span>
+            Nos <span style={{
+              background: 'linear-gradient(to right, #005492, #107bb3, #3d9bcf)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>solutions</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Un écosystème complet d&apos;apprentissage intégrant des workflows et des agents IA 
@@ -51,7 +56,12 @@ export default function Solutions() {
         >
           {/* Titre */}
           <h3 className="text-3xl font-bold text-center text-gray-900 mb-16">
-            Application intelligente de nos <span className="text-primary">agents IA</span>
+            Application intelligente de nos <span style={{
+              background: 'linear-gradient(to right, #005492, #107bb3, #3d9bcf)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>agents IA</span>
           </h3>
 
           {/* Grille horizontale 4 colonnes */}
@@ -123,19 +133,16 @@ export default function Solutions() {
         className="mt-20"
       >
         <div className="flex flex-col items-center justify-center">
-          <p className="text-black text-lg mb-8 font-medium text-center">Propulsé par</p>
-          <div className="flex items-center justify-center gap-8">
+          <p className="text-black text-lg mb-3 font-medium text-center">Propulsé par :</p>
+          <div className="flex items-center justify-center gap-6">
               {/* Ragflow */}
               <a 
                 href="https://ragflow.io" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex flex-col items-center gap-3 transition-opacity hover:opacity-70"
+                className="flex items-center justify-center transition-opacity hover:opacity-70"
               >
-                <div className="h-12 flex items-center justify-center">
-                  <RagflowLogo />
-                </div>
-                <span className="text-black font-medium">Ragflow</span>
+                <RagflowLogo />
               </a>
 
               {/* Chutes.ai */}
@@ -143,12 +150,9 @@ export default function Solutions() {
                 href="https://chutes.ai" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex flex-col items-center gap-3 transition-opacity hover:opacity-70"
+                className="flex items-center justify-center transition-opacity hover:opacity-70"
               >
-                <div className="h-12 flex items-center justify-center">
-                  <ChutesLogo />
-                </div>
-                <span className="text-black font-medium">Chutes.ai</span>
+                <ChutesLogo />
               </a>
           </div>
         </div>

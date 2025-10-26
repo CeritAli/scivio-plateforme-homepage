@@ -42,12 +42,12 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://clinicalsearch.fr"
+                  href="https://mediqare.fr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
                 >
-                  ClinicalSearch.fr
+                  Mediqare.fr
                 </a>
               </li>
             </ul>
@@ -58,18 +58,23 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Liens</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#about" className="hover:text-primary transition-colors">
-                  À propos
+                <a href="/#solutions" className="hover:text-primary transition-colors">
+                  Nos solutions
                 </a>
               </li>
               <li>
-                <a href="#platforms" className="hover:text-primary transition-colors">
+                <a href="/#platforms" className="hover:text-primary transition-colors">
                   Nos plateformes
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-primary transition-colors">
-                  Contact
+                <a href="/#about" className="hover:text-primary transition-colors">
+                  À propos
+                </a>
+              </li>
+              <li>
+                <a href="/#contact" className="hover:text-primary transition-colors">
+                  Contactez
                 </a>
               </li>
             </ul>
@@ -78,7 +83,13 @@ export default function Footer() {
 
         {/* Ligne de séparation */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} SCIVIO. Tous droits réservés.</p>
+          <p className="flex items-center justify-center gap-4">
+            <span>&copy; {new Date().getFullYear()} SCIVIO. Tous droits réservés.</span>
+            <span className="text-gray-600">|</span>
+            <a href="/mentions-legales" className="hover:text-primary transition-colors">
+              Mentions légales
+            </a>
+          </p>
         </div>
       </div>
     </footer>

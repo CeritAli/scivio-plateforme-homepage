@@ -58,14 +58,17 @@ export default function Hero() {
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center relative z-10"
             >
               <a
-                href="#platforms"
-                className="group inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+                href="/#platforms"
+                className="group inline-flex items-center gap-2 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+                style={{
+                  background: 'linear-gradient(to right, #005492, #107bb3, #3d9bcf)'
+                }}
               >
                 Découvrir nos plateformes
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="#contact"
+                href="/#contact"
                 className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-primary border-2 border-primary px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300"
               >
                 Nous contacter
