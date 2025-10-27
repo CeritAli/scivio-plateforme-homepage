@@ -36,7 +36,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-gray-900 mb-8 max-w-xl relative z-10"
             >
-              Innovation en<br />Éducation Médicale
+              Votre compagnon IA<br />pour les EDN
             </motion.p>
 
             {/* Description */}
@@ -46,8 +46,8 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-lg sm:text-xl text-gray-600 mb-12 relative z-10"
             >
-              Des plateformes innovantes pour accompagner les étudiants en médecine
-              et les professionnels de santé dans leur parcours d&apos;apprentissage et de pratique
+              Une plateforme innovante utilisant l&apos;intelligence artificielle pour vous accompagner
+              dans votre préparation aux Épreuves Dématérialisées Nationales
             </motion.p>
 
             {/* CTA Buttons */}
@@ -58,20 +58,19 @@ export default function Hero() {
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center relative z-10"
             >
               <a
-                href="/#platforms"
-                className="group inline-flex items-center gap-2 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
-                style={{
-                  background: 'linear-gradient(to right, #005492, #107bb3, #3d9bcf)'
-                }}
+                href="https://edn.chat"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl bg-primary hover:bg-primary-dark"
               >
-                Découvrir nos plateformes
+                Accéder à EDN.chat
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="/#contact"
-                className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-primary border-2 border-primary px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300"
+                href="/#about"
+                className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-800 border-2 border-primary px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300"
               >
-                Nous contacter
+                En savoir plus
               </a>
             </motion.div>
           </div>
@@ -86,7 +85,7 @@ export default function Hero() {
             <div className="relative w-full h-[500px] rounded-2xl overflow-hidden border border-gray-200">
               <Image
                 src="/images/hero-image.webp"
-                alt="Scivio Hero Image"
+                alt="EDN.chat Hero Image"
                 fill
                 className="object-cover"
                 priority

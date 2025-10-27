@@ -1,13 +1,11 @@
 'use client'
 
 import { useState, useRef, useEffect, useCallback } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown } from 'lucide-react'
+import { motion } from 'framer-motion'
 import Logo from './Logo'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
-  const [loginOpen, setLoginOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('hero')
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 })
   const [scrollDirection, setScrollDirection] = useState<'down' | 'up'>('down')
@@ -15,25 +13,21 @@ export default function Navbar() {
 
   // Refs pour chaque élément de navigation
   const logoRef = useRef<HTMLAnchorElement>(null)
+  const modesRef = useRef<HTMLAnchorElement>(null)
+  const pricingRef = useRef<HTMLAnchorElement>(null)
   const aboutRef = useRef<HTMLAnchorElement>(null)
-  const solutionsRef = useRef<HTMLAnchorElement>(null)
-  const platformsRef = useRef<HTMLAnchorElement>(null)
+  const faqRef = useRef<HTMLAnchorElement>(null)
   const contactRef = useRef<HTMLAnchorElement>(null)
   const loginRef = useRef<HTMLDivElement>(null)
   const navRef = useRef<HTMLDivElement>(null)
 
-  const platforms = [
-    { name: 'MedStart', href: 'https://medstart.fr', description: 'Pour les étudiants en PASS/LAS' },
-    { name: 'Edn.chat', href: 'https://edn.chat', description: 'Pour les étudiants préparant les EDN' },
-    { name: 'Mediqare', href: 'https://mediqare.fr', description: 'Moteur de recherche intelligent médical' },
-  ]
-
   // Mapping des sections vers leurs refs
   const navRefs: Record<string, React.RefObject<HTMLElement>> = {
     hero: logoRef,
+    modes: modesRef,
+    tarifs: pricingRef,
     about: aboutRef,
-    solutions: solutionsRef,
-    platforms: platformsRef,
+    faq: faqRef,
     contact: contactRef,
   }
 
@@ -96,7 +90,7 @@ export default function Navbar() {
       heroSection.setAttribute('data-section', 'hero')
     }
 
-    const sections = ['about', 'solutions', 'platforms', 'contact']
+    const sections = ['modes', 'tarifs', 'about', 'faq', 'contact']
     sections.forEach((id) => {
       const element = document.getElementById(id)
       if (element) observer.observe(element)
@@ -146,32 +140,38 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-20">
             {/* Logo et nom - Toujours visibles et plus grands */}
             <a ref={logoRef} href="/" className="flex items-center gap-3">
-              <Logo width={50} height={48} />
-              <span className="text-2xl font-bold text-black hidden sm:block">
-                Scivio
+              <div className="relative">
+                <Logo width={60} height={58} />
+                <span 
+                  className="absolute bottom-1 left-10 leading-none font-bold whitespace-nowrap text-primary"
+                  style={{ fontSize: '8.5px' }}
+                >
+                  par Scivio
+                </span>
+              </div>
+              <span className="text-2xl text-black hidden sm:block">
+                <span className="font-bold">Edn</span><span className="text-primary">.</span>chat
               </span>
             </a>
 
             {/* Navigation Links */}
             <div className="hidden md:flex items-center gap-8">
               <a
-                ref={solutionsRef}
-                href="/#solutions"
+                ref={modesRef}
+                href="/#modes"
                 className="text-gray-700 hover:text-primary font-medium transition-colors duration-200 relative group text-sm"
               >
-                Nos solutions
+                Modes
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
               </a>
-
               <a
-                ref={platformsRef}
-                href="/#platforms"
+                ref={pricingRef}
+                href="/#tarifs"
                 className="text-gray-700 hover:text-primary font-medium transition-colors duration-200 relative group text-sm"
               >
-                Nos plateformes
+                Tarifs
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
               </a>
-
               <a
                 ref={aboutRef}
                 href="/#about"
@@ -180,13 +180,20 @@ export default function Navbar() {
                 À propos
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
               </a>
-
+              <a
+                ref={faqRef}
+                href="/#faq"
+                className="text-gray-700 hover:text-primary font-medium transition-colors duration-200 relative group text-sm"
+              >
+                FAQ
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
+              </a>
               <a
                 ref={contactRef}
                 href="/#contact"
                 className="text-gray-700 hover:text-primary font-medium transition-colors duration-200 relative group text-sm"
               >
-                Contactez-nous
+                Contact
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
               </a>
             </div>
@@ -195,42 +202,15 @@ export default function Navbar() {
             <div 
               ref={loginRef}
               className="relative"
-              onMouseEnter={() => setLoginOpen(true)}
-              onMouseLeave={() => setLoginOpen(false)}
             >
-              <button className="text-white px-5 py-2 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 text-sm flex items-center gap-1"
-                style={{
-                  background: 'linear-gradient(to right, #005492, #107bb3, #3d9bcf)'
-                }}
+              <a
+                href="https://edn.chat"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white px-5 py-2 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 text-sm flex items-center gap-1 bg-primary hover:bg-primary-dark"
               >
                 Se connecter
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${loginOpen ? 'rotate-180' : ''}`} />
-              </button>
-              
-              <AnimatePresence>
-                {loginOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full right-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-100 py-2 overflow-hidden"
-                  >
-                    {platforms.map((platform) => (
-                      <a
-                        key={platform.name}
-                        href={platform.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block px-4 py-3 hover:bg-gray-50 transition-colors duration-150"
-                      >
-                        <div className="font-semibold text-gray-900 text-sm">{platform.name}</div>
-                        <div className="text-xs text-gray-500 mt-0.5">{platform.description}</div>
-                      </a>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              </a>
             </div>
           </div>
 

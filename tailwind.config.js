@@ -8,15 +8,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Couleurs SCIVIO basées sur le logo
+        // Couleurs EDN.chat
         primary: {
-          DEFAULT: '#107bb3',
-          dark: '#005492',
-          light: '#3d9bcf',
+          DEFAULT: '#a8d5ba',
+          dark: '#a8d5ba',
+          light: '#a8d5ba',
         },
         secondary: {
-          DEFAULT: '#0a5d8a',
-          light: '#e6f3f9',
+          DEFAULT: '#7fb383',
+          light: '#e8f5e8',
         },
       },
       animation: {

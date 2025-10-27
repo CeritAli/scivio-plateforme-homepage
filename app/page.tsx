@@ -1,9 +1,11 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
-import Solutions from '@/components/Solutions'
+import Modes from '@/components/Modes'
+import Pricing from '@/components/Pricing'
 import MissionVision from '@/components/MissionVision'
-import Platforms from '@/components/Platforms'
+import FAQ from '@/components/FAQ'
 import Contact from '@/components/Contact'
+import CTASection from '@/components/CTASection'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -11,10 +13,12 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
-      <Solutions />
-      <Platforms />
+      <Modes />
+      <Pricing />
       <MissionVision />
+      <FAQ />
       <Contact />
+      <CTASection />
       <Footer />
     </main>
   )

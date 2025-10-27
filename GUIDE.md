@@ -64,9 +64,9 @@ La barre de navigation en haut avec :
 ### 1. Couleurs (tailwind.config.js)
 ```javascript
 primary: {
-  DEFAULT: '#107bb3',  // ← Changez ici
-  dark: '#005492',      // ← Et ici
-  light: '#3d9bcf',     // ← Et ici
+  DEFAULT: '#a8d5ba',  // ← Couleur primaire vert pastel EDN.chat
+  dark: '#8fc4a3',      // ← Vert foncé
+  light: '#c8e6c9',     // ← Vert clair
 }
 ```
 

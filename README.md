@@ -40,9 +40,10 @@ npm run dev
 ### Couleurs
 
 Les couleurs sont définies dans `tailwind.config.js` :
-- `primary` : #107bb3 (bleu principal SCIVIO)
-- `primary-dark` : #005492 (bleu foncé)
-- `primary-light` : #3d9bcf (bleu clair)
+- `primary` : #a8d5ba (vert pastel EDN.chat)
+- `primary-dark` : #8fc4a3 (vert foncé)
+- `primary-light` : #c8e6c9 (vert clair)
+- `secondary` : #7fb383 (vert secondaire)
 
 Pour modifier les couleurs pour une autre plateforme, éditez simplement ces valeurs.
 
