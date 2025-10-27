@@ -4,6 +4,10 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { MessageSquare, FileText, Mic, Dumbbell, Brain, GraduationCap, Check } from 'lucide-react'
+import ChatInterface from './interfaces/ChatInterface'
+import QuizInterface from './interfaces/QuizInterface'
+import FlashcardInterface from './interfaces/FlashcardInterface'
+import AnimatedInterface from './interfaces/AnimatedInterface'
 
 const modes = [
   {
@@ -198,12 +202,30 @@ export default function Modes() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="relative"
+                    className="relative flex items-center justify-center"
                   >
-                    {/* Container pour l'icône/mockup */}
-                    <div className="bg-primary/5 rounded-3xl p-12 flex items-center justify-center min-h-[400px]">
-                      <Icon className="w-48 h-48 text-primary" strokeWidth={1.5} />
-                    </div>
+                    {/* Afficher l'interface appropriée selon le mode */}
+                    {mode.id === 1 && (
+                      <AnimatedInterface animationType="float" delay={0.5}>
+                        <ChatInterface size="medium" autoPlay={true} />
+                      </AnimatedInterface>
+                    )}
+                    {mode.id === 4 && (
+                      <AnimatedInterface animationType="float" delay={0.5}>
+                        <QuizInterface size="medium" autoPlay={true} />
+                      </AnimatedInterface>
+                    )}
+                    {mode.id === 5 && (
+                      <AnimatedInterface animationType="none" delay={0.5}>
+                        <FlashcardInterface size="medium" autoPlay={true} />
+                      </AnimatedInterface>
+                    )}
+                    {/* Pour les autres modes, afficher l'icône en attendant */}
+                    {![1, 4, 5].includes(mode.id) && (
+                      <div className="bg-primary/5 rounded-3xl p-12 flex items-center justify-center min-h-[400px]">
+                        <Icon className="w-48 h-48 text-primary" strokeWidth={1.5} />
+                      </div>
+                    )}
 
                     {/* Effet décoratif */}
                     <motion.div

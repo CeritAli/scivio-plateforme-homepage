@@ -2,8 +2,9 @@
 
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
-import Image from 'next/image'
 import Logo from './Logo'
+import ChatInterface from './interfaces/ChatInterface'
+import AnimatedInterface from './interfaces/AnimatedInterface'
 
 export default function Hero() {
   return (
@@ -75,22 +76,16 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Colonne droite - Image */}
+          {/* Colonne droite - Interface Chat */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative hidden lg:flex items-center justify-center"
           >
-            <div className="relative w-full h-[500px] rounded-2xl overflow-hidden border border-gray-200">
-              <Image
-                src="/images/hero-image.webp"
-                alt="EDN.chat Hero Image"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
+            <AnimatedInterface animationType="float" delay={1}>
+              <ChatInterface size="large" autoPlay={true} />
+            </AnimatedInterface>
           </motion.div>
         </div>
       </div>
